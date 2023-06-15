@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--Spring 의 application.properties 역할-->
+
+<persistence version="2.2"
+             xmlns="http://xmlns.jcp.org/xml/ns/persistence" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+             xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/persistence http://xmlns.jcp.org/xml/ns/persistence/persistence_2_2.xsd">
+    <persistence-unit name="memo">
+        <class>com.sparta.entity.Memo</class>
+        <properties>
+            <!--데이터베이스의 정보를 주는 코드로 jpa 를 사용하고 싶으면 자바 환경에서는 이렇게 하면 됨-->
+            <property name="jakarta.persistence.jdbc.driver" value="com.mysql.cj.jdbc.Driver"/>
+            <property name="jakarta.persistence.jdbc.user" value="root"/>
+            <property name="jakarta.persistence.jdbc.password" value="Zmeitner0314~"/>
+            <property name="jakarta.persistence.jdbc.url" value="jdbc:mysql://localhost:3306/memo"/>
+
+            <property name="hibernate.hbm2ddl.auto" value="update" />
+
+            <!--jpa 를 자동으로 생성해주는 framework 인 hibernate-->
+            <property name="hibernate.show_sql" value="true"/>
+            <property name="hibernate.format_sql" value="true"/>
+            <property name="hibernate.use_sql_comments" value="true"/>
+        </properties>
+    </persistence-unit>
+</persistence>
